@@ -3,9 +3,9 @@ from selenium import webdriver
 import time
 
 # Zu untersuchende Domains
-domains = ['https://insektenbekaempfung24.de/']#, 'https://bio-kammerjaeger.de/', 'https://Wespen-beseitigen.de/',
-           #'https://Ungeziefer-bekaempfen.de/', 'https://Insektenbekaempfung24h.de/',
-           #'https://Schaedlinge-nicht-bei-mir.de/', 'https://kammerjaeger-huber.de/']
+domains = ['https://insektenbekaempfung24.de/', 'https://bio-kammerjaeger.de/', 'https://Wespen-beseitigen.de/',
+           'https://Ungeziefer-bekaempfen.de/', 'https://Insektenbekaempfung24h.de/',
+           'https://Schaedlinge-nicht-bei-mir.de/', 'https://kammerjaeger-huber.de/']
 # Unter folgenden Keywords
 keywords = ['Schädlingsbemkäpfung', 'Kammerjäger', 'Wespenbekämpfung', 'Rattenbekämpfung',
             'Bettwanzen', 'Kakerlaken', 'Ameisen', 'Flöhe', 'Milben', 'Tauben', 'Marder', 'Siebenschläfer']
@@ -57,7 +57,9 @@ for domain in domains:
                       f'{ort}&breakdown=device&num_of_days=' \
                       f'{untersuchungsZeitRaumInTagen}'
             browser.get(url2Gsc)
-            time.sleep(10)
+            #Stellschraube für Zeit
+            time.sleep(4)
+            #Stellschraube für Zeit
             ratingNr = browser.find_elements_by_class_name('nnLLaf')[3].text
             rating.append(domain)
             rating.append(keyword)
