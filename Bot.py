@@ -1,6 +1,13 @@
 import csv
 from selenium import webdriver
 import time
+import platform
+
+# Überprüft das Betriebssystem
+if platform.system() == 'Darwin':
+    path = '/Users/mediagmbh/PycharmProjects/SearchConsoloPositionBot/'
+else:
+    path = ''
 
 # Zu untersuchende Domains
 domains = ['https://insektenbekaempfung24.de/', 'https://bio-kammerjaeger.de/', 'https://Wespen-beseitigen.de/',
@@ -30,8 +37,7 @@ passwort = "DHE12345"
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
-browser = webdriver.Chrome("/Users/mediagmbh/PycharmProjects/SearchConsoloPositionBot/chromedriver",
-                           options=chrome_options)
+browser = webdriver.Chrome(f"{path}chromedriver", options=chrome_options)
 # Navigiert zum Google-Account-Login (Workaround über externe Seite)
 browser.get("https://stackexchange.com/")
 time.sleep(5)
@@ -49,34 +55,35 @@ browser.find_element_by_id("passwordNext").click()
 time.sleep(5)
 # Untersucht ab hier das Ranking auf Google-Search-Console
 rating = []
-for domain in domains:
-    for keyword in keywords:
-        for ort in ortschaften:
-            url2Gsc = f'https://search.google.com/search-console/performance/search-analytics?resource_id={domain}' \
-                      f'&metrics=POSITION&query=*{keyword}%20' \
-                      f'{ort}&breakdown=device&num_of_days=' \
-                      f'{untersuchungsZeitRaumInTagen}'
-            browser.get(url2Gsc)
-            #Stellschraube für Zeit
-            time.sleep(4)
-            #Stellschraube für Zeit
-            ratingNr = browser.find_elements_by_class_name('nnLLaf')[3].text
-            rating.append(domain)
-            rating.append(keyword)
-            rating.append(ort)
-            rating.append(ratingNr)
-
-# Schreibt die Daten in eine CSV
-with open('schädling.csv', 'w', newline='')as f:
-    fieldnames = ['Domain', 'Keyword', 'Ort', 'Ranking']
-    thewriter = csv.DictWriter(f, fieldnames=fieldnames)
-    thewriter.writeheader()
-    newIterator = iter(rating)
-    endzeile = int(len(rating)/4)
-    for item in range(0,endzeile):
-        thewriter.writerow({'Domain': next(newIterator),
-                            'Keyword': next(newIterator),
-                            'Ort': next(newIterator),
-                            'Ranking': next(newIterator)})
-# Beendet den gesamten Vorgang
-browser.quit()
+try:
+    for domain in domains:
+        for keyword in keywords:
+            for ort in ortschaften:
+                url2Gsc = f'https://search.google.com/search-console/performance/search-analytics?resource_id={domain}' \
+                          f'&metrics=POSITION&query=*{keyword}%20' \
+                          f'{ort}&breakdown=device&num_of_days=' \
+                          f'{untersuchungsZeitRaumInTagen}'
+                browser.get(url2Gsc)
+                #Stellschraube für Zeit
+                time.sleep(4)
+                #Stellschraube für Zeit
+                ratingNr = browser.find_elements_by_class_name('nnLLaf')[3].text
+                rating.append(domain)
+                rating.append(keyword)
+                rating.append(ort)
+                rating.append(ratingNr)
+finally:
+    # Schreibt die Daten in eine CSV
+    with open('schädling.csv', 'w', newline='')as f:
+        fieldnames = ['Domain', 'Keyword', 'Ort', 'Ranking']
+        thewriter = csv.DictWriter(f, fieldnames=fieldnames)
+        thewriter.writeheader()
+        newIterator = iter(rating)
+        endzeile = int(len(rating)/4)
+        for item in range(0,endzeile):
+            thewriter.writerow({'Domain': next(newIterator),
+                                'Keyword': next(newIterator),
+                                'Ort': next(newIterator),
+                                'Ranking': next(newIterator)})
+    # Beendet den gesamten Vorgang
+    browser.quit()
