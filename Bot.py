@@ -14,11 +14,11 @@ domains = ['https://insektenbekaempfung24.de/', 'https://bio-kammerjaeger.de/', 
            'https://Ungeziefer-bekaempfen.de/', 'https://Insektenbekaempfung24h.de/',
            'https://Schaedlinge-nicht-bei-mir.de/', 'https://kammerjaeger-huber.de/']
 # Unter folgenden Keywords
-keywords = ['Schädlingsbemkäpfung', 'Kammerjäger', 'Wespenbekämpfung', 'Rattenbekämpfung',
+keywords = ['Schädlingsbekämpfung', 'Kammerjäger', 'Wespenbekämpfung', 'Rattenbekämpfung',
             'Bettwanzen', 'Kakerlaken', 'Ameisen', 'Flöhe', 'Milben', 'Tauben', 'Marder', 'Siebenschläfer']
 # In folgenden Ortschaften (Regensburg und Umgebung)
-ortschaften = ['Regensburg', 'Lappersdorf', 'Tergernheim', 'Barbing', ' Neutraubling', 'Obertraubling', 'Pentling',
-               'Sinzing', 'Nittendorf', 'Pettendorf', 'Zeitlan', 'Wenzenbach', 'Bach%20an%20der%20Donau', 'Mintraching',
+ortschaften = ['Regensburg', 'Lappersdorf', 'Tegernheim', 'Barbing', ' Neutraubling', 'Obertraubling', 'Pentling',
+               'Sinzing', 'Nittendorf', 'Pettendorf', 'Zeitlarn', 'Wenzenbach', 'Bach%20an%20der%20Donau', 'Mintraching',
                'Köfering', 'Deuerling', 'Pielenhofen', 'Woflsegg', 'Regenstauf', 'Bernhardswald', 'Brennberg',
                'Wiesent', 'Wörth%20an%20der%20Donau', 'Pfatter', 'Riekofen', 'Mötzing', 'Sünching', 'Aufhausen',
                'Pfakofen', 'Hagelstadt', 'Thalmassing', 'Schierling', 'Laaber', 'Brunn', 'Duggendorf', 'Beratshausen',
