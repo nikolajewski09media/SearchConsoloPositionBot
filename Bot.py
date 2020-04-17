@@ -5,9 +5,9 @@ import platform
 
 # Überprüft das Betriebssystem
 if platform.system() == 'Darwin':
-    path = '/Users/mediagmbh/PycharmProjects/SearchConsoloPositionBot/'
+    path2Chromedriver = '/Users/mediagmbh/PycharmProjects/SearchConsoloPositionBot/'
 else:
-    path = ''
+    path2Chromedriver = ''
 
 # Zu untersuchende Domains
 domains = ['https://insektenbekaempfung24.de/', 'https://bio-kammerjaeger.de/', 'https://Wespen-beseitigen.de/',
@@ -37,7 +37,7 @@ passwort = "DHE12345"
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
-browser = webdriver.Chrome(f"{path}chromedriver", options=chrome_options)
+browser = webdriver.Chrome(f"{path2Chromedriver}chromedriver", options=chrome_options)
 # Navigiert zum Google-Account-Login (Workaround über externe Seite)
 browser.get("https://stackexchange.com/")
 time.sleep(5)
