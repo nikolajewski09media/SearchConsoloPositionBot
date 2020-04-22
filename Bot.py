@@ -66,21 +66,27 @@ try:
                           f'{untersuchungsZeitRaumInTagen}'
 
                 browser.get(url2Gsc)
-                browser.find_elements_by_class_name('Ec82ie')[10].click()
+                browser.find_elements_by_class_name('Ec82ie')[0].click()
                 #Stellschraube für Zeit
                 time.sleep(4)
                 #Stellschraube für Zeit
                 try:
-                    ratingNrMobil = browser.find_elements_by_class_name('CrQbQ')[1].text
+                    ratingNrMobil = browser.find_elements_by_class_name('CrQbQ')[2].text
                 except NoSuchElementException:
                     ratingNrMobil = '0'
+                except IndexError:
+                    ratingNrMobil = '0'
                 try:
-                    ratingNrPC = browser.find_elements_by_class_name('CrQbQ')[0].text
+                    ratingNrPC = browser.find_elements_by_class_name('CrQbQ')[1].text
                 except NoSuchElementException:
                      ratingNrPC = '0'
+                except IndexError:
+                     ratingNrPC = '0'
                 try:
-                    ratingNrTablet = browser.find_elements_by_class_name('CrQbQ')[2].text
+                    ratingNrTablet = browser.find_elements_by_class_name('CrQbQ')[3].text
                 except NoSuchElementException:
+                    ratingNrTablet = '0'
+                except IndexError:
                     ratingNrTablet = '0'
 
                 rating.append(domain)
@@ -105,4 +111,4 @@ finally:
                                 'RankingPC': next(newIterator),
                                 'RankingTablet': next(newIterator)})
     # Beendet den gesamten Vorgang
-   # browser.quit()
+    browser.quit()
