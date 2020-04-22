@@ -68,19 +68,19 @@ try:
                 #Stellschraube für Zeit
                 time.sleep(4)
                 #Stellschraube für Zeit
-                ratingNrMobil = browser.find_elements_by_class_name('CrQbQ')[474].text
-                ratingNrPC = browser.find_elements_by_class_name('CrQbQ')[475].text
-                ratingNrTablet = browser.find_elements_by_class_name('CrQbQ')[476].text
+                ratingNrMobil = browser.find_elements_by_class_name('CrQbQ')[1].text
+                ratingNrPC = browser.find_elements_by_class_name('CrQbQ')[0].text
+                #ratingNrTablet = browser.find_elements_by_class_name('CrQbQ')[476].text
                 rating.append(domain)
                 rating.append(keyword)
                 rating.append(ort)
                 rating.append(ratingNrMobil)
                 rating.append(ratingNrPC)
-                rating.append(ratingNrTablet)
+                #rating.append(ratingNrTablet)
 finally:
     # Schreibt die Daten in eine CSV
     with open('schädling.csv', 'w', newline='')as f:
-        fieldnames = ['Domain', 'Keyword', 'Ort', 'RankingMobil', 'RankingPC', 'RankingTablet']
+        fieldnames = ['Domain', 'Keyword', 'Ort', 'RankingMobil', 'RankingPC']#, 'RankingTablet']
         thewriter = csv.DictWriter(f, fieldnames=fieldnames)
         thewriter.writeheader()
         newIterator = iter(rating)
@@ -90,7 +90,8 @@ finally:
                                 'Keyword': next(newIterator),
                                 'Ort': next(newIterator),
                                 'RankingMobil': next(newIterator),
-                                'RankingPC': next(newIterator),
-                                'RankingTablet': next(newIterator)})
+                                'RankingPC': next(newIterator)
+                                #'RankingTablet': next(newIterator)
+            })
     # Beendet den gesamten Vorgang
-    browser.quit()
+   # browser.quit()
