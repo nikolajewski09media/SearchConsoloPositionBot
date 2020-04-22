@@ -68,23 +68,29 @@ try:
                 #Stellschraube für Zeit
                 time.sleep(4)
                 #Stellschraube für Zeit
-                ratingNr = browser.find_elements_by_class_name('nnLLaf')[3].text
+                ratingNrMobil = browser.find_elements_by_class_name('CrQbQ')[474].text
+                ratingNrPC = browser.find_elements_by_class_name('CrQbQ')[475].text
+                ratingNrTablet = browser.find_elements_by_class_name('CrQbQ')[476].text
                 rating.append(domain)
                 rating.append(keyword)
                 rating.append(ort)
-                rating.append(ratingNr)
+                rating.append(ratingNrMobil)
+                rating.append(ratingNrPC)
+                rating.append(ratingNrTablet)
 finally:
     # Schreibt die Daten in eine CSV
     with open('schädling.csv', 'w', newline='')as f:
-        fieldnames = ['Domain', 'Keyword', 'Ort', 'Ranking']
+        fieldnames = ['Domain', 'Keyword', 'Ort', 'RankingMobil', 'RankingPC', 'RankingTablet']
         thewriter = csv.DictWriter(f, fieldnames=fieldnames)
         thewriter.writeheader()
         newIterator = iter(rating)
-        endzeile = int(len(rating)/4)
-        for item in range(0,endzeile):
+        endzeile = int(len(rating)/6)
+        for item in range(0, endzeile):
             thewriter.writerow({'Domain': next(newIterator),
                                 'Keyword': next(newIterator),
                                 'Ort': next(newIterator),
-                                'Ranking': next(newIterator)})
+                                'RankingMobil': next(newIterator),
+                                'RankingPC': next(newIterator),
+                                'RankingTablet': next(newIterator)})
     # Beendet den gesamten Vorgang
     browser.quit()
