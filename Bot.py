@@ -10,16 +10,16 @@ else:
     path2Chromedriver = ''
 
 # Zu untersuchende Domains
-domains = ['https://insektenbekaempfung24.de/', 'https://bio-kammerjaeger.de/', 'https://Wespen-beseitigen.de/',
-           'https://Ungeziefer-bekaempfen.de/', 'https://Insektenbekaempfung24h.de/',
-           'https://Schaedlinge-nicht-bei-mir.de/', 'https://kammerjaeger-huber.de/']
+domains = ['https://sanitaernotdienst-24h.de/', 'https://heizung-sanitaer-hilfe.net/', 'https://sanitaer-nd.de/',
+           'https://klempner24h.de/', 'https://ihr-klempner.de/',
+           'https://notdienst-sanitaer.de/', 'https://sanitaerhilfe.de/']
 # Unter folgenden Keywords
-keywords = ['Schädlingsbekämpfung', 'Kammerjäger', 'Wespenbekämpfung', 'Rattenbekämpfung',
-            'Bettwanzen', 'Kakerlaken', 'Ameisen', 'Flöhe', 'Milben', 'Tauben', 'Marder', 'Siebenschläfer']
+keywords = ['Sanitär', 'Sanitärservice', 'Sanitärnotdienst', 'Heizung Sanitär',
+            'Gas-Wasser-Installateur', 'Wasserschaden', 'Rohrbruch']
 # In folgenden Ortschaften (Regensburg und Umgebung)
 ortschaften = ['Regensburg', 'Lappersdorf', 'Tegernheim', 'Barbing', ' Neutraubling', 'Obertraubling', 'Pentling',
                'Sinzing', 'Nittendorf', 'Pettendorf', 'Zeitlarn', 'Wenzenbach', 'Bach%20an%20der%20Donau', 'Mintraching',
-               'Köfering', 'Deuerling', 'Pielenhofen', 'Woflsegg', 'Regenstauf', 'Bernhardswald', 'Brennberg',
+               'Köfering', 'Deuerling', 'Pielenhofen', 'Wolfsegg', 'Regenstauf', 'Bernhardswald', 'Brennberg',
                'Wiesent', 'Wörth%20an%20der%20Donau', 'Pfatter', 'Riekofen', 'Mötzing', 'Sünching', 'Aufhausen',
                'Pfakofen', 'Hagelstadt', 'Thalmassing', 'Schierling', 'Laaber', 'Brunn', 'Duggendorf', 'Beratshausen',
                'Holzheim%20am%20Forst', 'Kallmünz',
