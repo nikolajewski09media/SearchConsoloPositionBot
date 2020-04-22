@@ -10,7 +10,7 @@ else:
     path2Chromedriver = ''
 
 # Zu untersuchende Domains
-domains = ['https://sanitaernotdienst-24h.de/', 'https://heizung-sanitaer-hilfe.net/', 'https://sanitaer-nd.de/',
+domains = ['https://sanitaer-service-24h.de /', 'https://heizung-sanitaer-hilfe.net/', 'https://sanitaer-nd.de/',
            'https://klempner24h.de/', 'https://ihr-klempner.de/',
            'https://notdienst-sanitaer.de/', 'https://sanitaerhilfe.de/']
 # Unter folgenden Keywords
@@ -30,7 +30,7 @@ ortschaften = ['Regensburg', 'Lappersdorf', 'Tegernheim', 'Barbing', ' Neutraubl
 untersuchungsZeitRaumInTagen = 7
 
 # Google-Account-Zugangsdaten
-benutzer = "sophia.ebersbacher1984@gmail.com"
+benutzer = "steffen.glockner1966@gmail.com"
 passwort = "DHE12345"
 
 # Öffnet den Browser
