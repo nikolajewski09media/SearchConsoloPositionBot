@@ -10,7 +10,7 @@ else:
     path2Chromedriver = ''
 
 # Zu untersuchende Domains
-domains = ['https://sanitaer-service-24h.de /', 'https://heizung-sanitaer-hilfe.net/', 'https://sanitaer-nd.de/',
+domains = ['https://sanitaer-service-24h.de/', 'https://heizung-sanitaer-hilfe.net/', 'https://sanitaer-nd.de/',
            'https://klempner24h.de/', 'https://ihr-klempner.de/',
            'https://notdienst-sanitaer.de/', 'https://sanitaerhilfe.de/']
 # Unter folgenden Keywords
