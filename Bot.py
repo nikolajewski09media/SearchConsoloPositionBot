@@ -2,6 +2,7 @@ import csv
 from selenium import webdriver
 import time
 import platform
+from selenium.common.exceptions import NoSuchElementException
 
 # Überprüft das Betriebssystem
 if platform.system() == 'Darwin':
@@ -65,22 +66,33 @@ try:
                           f'{untersuchungsZeitRaumInTagen}'
 
                 browser.get(url2Gsc)
+                browser.find_elements_by_class_name('Ec82ie')[10].click()
                 #Stellschraube für Zeit
                 time.sleep(4)
                 #Stellschraube für Zeit
-                ratingNrMobil = browser.find_elements_by_class_name('CrQbQ')[1].text
-                ratingNrPC = browser.find_elements_by_class_name('CrQbQ')[0].text
-                #ratingNrTablet = browser.find_elements_by_class_name('CrQbQ')[476].text
+                try:
+                    ratingNrMobil = browser.find_elements_by_class_name('CrQbQ')[1].text
+                except NoSuchElementException:
+                    ratingNrMobil = '0'
+                try:
+                    ratingNrPC = browser.find_elements_by_class_name('CrQbQ')[0].text
+                except NoSuchElementException:
+                     ratingNrPC = '0'
+                try:
+                    ratingNrTablet = browser.find_elements_by_class_name('CrQbQ')[2].text
+                except NoSuchElementException:
+                    ratingNrTablet = '0'
+
                 rating.append(domain)
                 rating.append(keyword)
                 rating.append(ort)
                 rating.append(ratingNrMobil)
                 rating.append(ratingNrPC)
-                #rating.append(ratingNrTablet)
+                rating.append(ratingNrTablet)
 finally:
     # Schreibt die Daten in eine CSV
     with open('schädling.csv', 'w', newline='')as f:
-        fieldnames = ['Domain', 'Keyword', 'Ort', 'RankingMobil', 'RankingPC']#, 'RankingTablet']
+        fieldnames = ['Domain', 'Keyword', 'Ort', 'RankingMobil', 'RankingPC', 'RankingTablet']
         thewriter = csv.DictWriter(f, fieldnames=fieldnames)
         thewriter.writeheader()
         newIterator = iter(rating)
@@ -90,8 +102,7 @@ finally:
                                 'Keyword': next(newIterator),
                                 'Ort': next(newIterator),
                                 'RankingMobil': next(newIterator),
-                                'RankingPC': next(newIterator)
-                                #'RankingTablet': next(newIterator)
-            })
+                                'RankingPC': next(newIterator),
+                                'RankingTablet': next(newIterator)})
     # Beendet den gesamten Vorgang
    # browser.quit()
