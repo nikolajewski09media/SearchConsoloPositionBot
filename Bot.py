@@ -74,7 +74,7 @@ try:
                 rating.append(ratingNr)
 finally:
     # Schreibt die Daten in eine CSV
-    with open('schädling.csv', 'w', newline='')as f:
+    with open('sanitär.csv', 'w', newline='')as f:
         fieldnames = ['Domain', 'Keyword', 'Ort', 'Ranking']
         thewriter = csv.DictWriter(f, fieldnames=fieldnames)
         thewriter.writeheader()
