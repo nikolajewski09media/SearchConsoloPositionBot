@@ -14,7 +14,7 @@ domains = ['https://insektenbekaempfung24.de/', 'https://bio-kammerjaeger.de/', 
            'https://Ungeziefer-bekaempfen.de/', 'https://Insektenbekaempfung24h.de/',
            'https://Schaedlinge-nicht-bei-mir.de/', 'https://kammerjaeger-huber.de/']
 # Unter folgenden Keywords
-keywords = ['Schädlingsbekämpfung', 'Kammerjäger', 'Wespenbekämpfung', 'Rattenbekämpfung',
+keywords = ['Schädlingsbekämpfung', 'Kammerjäger', 'Rattenbekämpfung',
             'Bettwanzen', 'Kakerlaken', 'Ameisen', 'Flöhe', 'Milben', 'Tauben', 'Marder', 'Siebenschläfer']
 # In folgenden Ortschaften (Regensburg und Umgebung)
 ortschaften = ['Regensburg', 'Lappersdorf', 'Tegernheim', 'Barbing', ' Neutraubling', 'Obertraubling', 'Pentling',
