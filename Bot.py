@@ -10,22 +10,22 @@ else:
     path2Chromedriver = ''
 
 # Zu untersuchende Domains
-domains = ['https://sanitaer-service-24h.de/', 'https://heizung-sanitaer-hilfe.net/', 'https://sanitaer-nd.de/',
-           'https://klempner24h.de/', 'https://ihr-klempner.de/',
-           'https://notdienst-sanitaer.de/', 'https://sanitaerhilfe.de/']
+domains = ['https://sanitaer-service-24h.de/']#, 'https://heizung-sanitaer-hilfe.net/', 'https://sanitaer-nd.de/',
+           #'https://klempner24h.de/', 'https://ihr-klempner.de/',
+           #'https://notdienst-sanitaer.de/', 'https://sanitaerhilfe.de/']
 # Unter folgenden Keywords
-keywords = ['Sanitär', 'Sanitärservice', 'Sanitärnotdienst', 'Heizung Sanitär',
-            'Gas-Wasser-Installateur', 'Wasserschaden', 'Rohrbruch']
+keywords = ['Sanitär', 'Sanitärservice']#, 'Sanitärnotdienst', 'Heizung Sanitär',
+            #'Gas-Wasser-Installateur', 'Wasserschaden', 'Rohrbruch']
 # In folgenden Ortschaften (Regensburg und Umgebung)
-ortschaften = ['Regensburg', 'Lappersdorf', 'Tegernheim', 'Barbing', ' Neutraubling', 'Obertraubling', 'Pentling',
-               'Sinzing', 'Nittendorf', 'Pettendorf', 'Zeitlarn', 'Wenzenbach', 'Bach%20an%20der%20Donau', 'Mintraching',
-               'Köfering', 'Deuerling', 'Pielenhofen', 'Wolfsegg', 'Regenstauf', 'Bernhardswald', 'Brennberg',
-               'Wiesent', 'Wörth%20an%20der%20Donau', 'Pfatter', 'Riekofen', 'Mötzing', 'Sünching', 'Aufhausen',
-               'Pfakofen', 'Hagelstadt', 'Thalmassing', 'Schierling', 'Laaber', 'Brunn', 'Duggendorf', 'Beratshausen',
-               'Holzheim%20am%20Forst', 'Kallmünz',
-               'Nittenau', 'Falkenstein', 'Roding', 'Bad%20Abbach', 'Kelheim', 'Essing', 'Parsberg', 'Burglengenfeld',
-               'Teublitz', 'Hohenfels', 'Painten', 'Saal%20an%20der%20Donau', 'Abendsberg', 'Langquaid',
-               'Maxhütte%20Haidhof']
+ortschaften = ['Regensburg']#, 'Lappersdorf', 'Tegernheim', 'Barbing', ' Neutraubling', 'Obertraubling', 'Pentling',
+               #'Sinzing', 'Nittendorf', 'Pettendorf', 'Zeitlarn', 'Wenzenbach', 'Bach%20an%20der%20Donau', 'Mintraching',
+               #'Köfering', 'Deuerling', 'Pielenhofen', 'Wolfsegg', 'Regenstauf', 'Bernhardswald', 'Brennberg',
+               #'Wiesent', 'Wörth%20an%20der%20Donau', 'Pfatter', 'Riekofen', 'Mötzing', 'Sünching', 'Aufhausen',
+               #'Pfakofen', 'Hagelstadt', 'Thalmassing', 'Schierling', 'Laaber', 'Brunn', 'Duggendorf', 'Beratshausen',
+               #'Holzheim%20am%20Forst', 'Kallmünz',
+               #'Nittenau', 'Falkenstein', 'Roding', 'Bad%20Abbach', 'Kelheim', 'Essing', 'Parsberg', 'Burglengenfeld',
+               #'Teublitz', 'Hohenfels', 'Painten', 'Saal%20an%20der%20Donau', 'Abendsberg', 'Langquaid',
+               #'Maxhütte%20Haidhof']
 
 untersuchungsZeitRaumInTagen = 7
 
