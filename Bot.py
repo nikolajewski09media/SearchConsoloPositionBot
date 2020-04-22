@@ -85,7 +85,7 @@ finally:
             thewriter.writerow({'Domain': next(newIterator),
                                 'Keyword': next(newIterator),
                                 'Ort': next(newIterator),
-                                'RankingD': next(newIterator)
+                                'RankingD': next(newIterator),
                                 'RankingM': next(newIterator)})
     # Beendet den gesamten Vorgang
     browser.quit()
