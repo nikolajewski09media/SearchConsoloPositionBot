@@ -60,14 +60,15 @@ try:
         for keyword in keywords:
             for ort in ortschaften:
                 url2Gsc = f'https://search.google.com/search-console/performance/search-analytics?resource_id={domain}' \
-                          f'&metrics=POSITION&query=*{keyword}%20' \
+                          f'&metrics=POSITION&device=*{keyword}%20' \
                           f'{ort}&breakdown=device&num_of_days=' \
                           f'{untersuchungsZeitRaumInTagen}'
                 browser.get(url2Gsc)
                 #Stellschraube für Zeit
                 time.sleep(4)
                 #Stellschraube für Zeit
-                ratingNr = browser.find_elements_by_class_name('nnLLaf')[3].text
+                ratingNr = browser.find_elements_by_class_name('CrQbQ  ')[3].text
+                ratingNr = browser.find_elements_by_class_name('qUFtbf')[3].text
                 rating.append(domain)
                 rating.append(keyword)
                 rating.append(ort)
@@ -75,7 +76,7 @@ try:
 finally:
     # Schreibt die Daten in eine CSV
     with open('schädling.csv', 'w', newline='')as f:
-        fieldnames = ['Domain', 'Keyword', 'Ort', 'Ranking']
+        fieldnames = ['Domain', 'Keyword', 'Ort', 'RankingD', 'RankingM']
         thewriter = csv.DictWriter(f, fieldnames=fieldnames)
         thewriter.writeheader()
         newIterator = iter(rating)
@@ -84,6 +85,7 @@ finally:
             thewriter.writerow({'Domain': next(newIterator),
                                 'Keyword': next(newIterator),
                                 'Ort': next(newIterator),
-                                'Ranking': next(newIterator)})
+                                'RankingD': next(newIterator)
+                                'RankingM': next(newIterator)})
     # Beendet den gesamten Vorgang
     browser.quit()
