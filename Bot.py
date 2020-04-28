@@ -74,13 +74,19 @@ try:
                     ratingNrMobil = browser.find_elements_by_class_name('CrQbQ')[1].text
                 except NoSuchElementException:
                     ratingNrMobil = '0'
+                except IndexError:
+                    ratingNrMobil = '0'
                 try:
                     ratingNrPC = browser.find_elements_by_class_name('CrQbQ')[0].text
                 except NoSuchElementException:
                      ratingNrPC = '0'
+                except IndexError:
+                    ratingNrPC = '0'
                 try:
                     ratingNrTablet = browser.find_elements_by_class_name('CrQbQ')[2].text
                 except NoSuchElementException:
+                    ratingNrTablet = '0'
+                except IndexError:
                     ratingNrTablet = '0'
 
                 rating.append(domain)
