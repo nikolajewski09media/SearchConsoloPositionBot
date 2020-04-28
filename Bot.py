@@ -54,7 +54,7 @@ browser.find_element_by_name("password").send_keys(passwort)
 time.sleep(5)
 browser.find_element_by_id("passwordNext").click()
 time.sleep(5)
-# Untersucht ab hier das Ranking auf Google-Search-Console
+# Untersucht ab hier das Ranking auf Google-Search-Consolew
 rating = []
 try:
     for domain in domains:
